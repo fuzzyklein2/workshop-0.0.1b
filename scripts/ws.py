@@ -36,7 +36,9 @@ elif RUNNING_IN_JUPYTER:
     except FileNotFoundError:
         stop("Can't find the notebook name. Are you running this in a notebook?")
         exit(2)
-    finally: WORKSHOP = os.environ["WORKSHOP_DIRECTORY"]
+    finally: # WORKSHOP = os.environ["WORKSHOP_DIRECTORY"]
+        stop("Application directory can't be found! 😲")
+        exit(3)
 
 # debug(f'Application directory: {str(WORKSHOP)}')
 # print(f'Workshop directory: {WORKSHOP}')
